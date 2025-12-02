@@ -16,7 +16,7 @@ else:
         api_key = st.text_input("API Key:", type="password")
 
 # --- INTERFAZ ---
-st.title("🩺 Simulador Clínico AI")
+st.title("🩺 Simulador Clínico de Memodi Inc")
 
 if not api_key:
     st.info("👈 Configura tu API Key para empezar.")

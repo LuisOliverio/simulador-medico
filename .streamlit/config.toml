@@ -1,0 +1,7 @@
+[theme]
+primaryColor = "#007AFF"        # Azul vibrante tipo iOS
+backgroundColor = "#FFFFFF"     # Blanco puro
+secondaryBackgroundColor = "#F2F2F7" # Gris muy tenue (system gray 6)
+textColor = "#1C1C1E"           # Casi negro, para alto contraste
+font = "sans serif"
+base = "light"

@@ -3,6 +3,42 @@ import google.generativeai as genai
 
 # --- CONFIGURACIÓN VISUAL ---
 st.set_page_config(page_title="Simulador Médico", page_icon="🩺", layout="centered")
+import streamlit as st
+import google.generativeai as genai
+
+# --- CONFIGURACIÓN DE PÁGINA ---
+st.set_page_config(page_title="Simulador Médico", page_icon="🩺", layout="centered")
+
+# --- CSS HACK: LIMPIEZA VISUAL ---
+hide_streamlit_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            header {visibility: hidden;}
+            .stDeployButton {display:none;}
+            
+            /* Ajuste para que el título no tenga tanto espacio arriba */
+            .block-container {
+                padding-top: 2rem;
+                padding-bottom: 2rem;
+            }
+            </style>
+            """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+
+# --- HEADER PERSONALIZADO (BRANDING) ---
+# En lugar de un título simple, usamos columnas para darle estructura
+col1, col2 = st.columns([1, 6])
+
+with col1:
+    # Aquí podrías poner una imagen con st.image("logo.png") si la subes
+    st.markdown("## 🩺") 
+
+with col2:
+    st.markdown("### Práctica Deliberada")
+    st.caption("Dr. Luis Oliverio | Medicina Interna")
+
+st.divider() # Línea divisoria elegante
 
 # --- GESTIÓN DE LA LLAVE (AUTO-LOGIN) ---
 api_key = None
@@ -16,7 +52,7 @@ else:
         api_key = st.text_input("API Key:", type="password")
 
 # --- INTERFAZ ---
-st.title("🩺 Simulador Clínico de Memodi Inc")
+st.title("🧠 Simulador Clínico de Memodi")
 
 if not api_key:
     st.info("👈 Configura tu API Key para empezar.")
